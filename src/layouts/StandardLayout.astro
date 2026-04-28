@@ -1,0 +1,42 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PortfolioHeader from '@/components/common/PortfolioHeader';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="flex flex-col h-screen overflow-hidden">
+    <!-- Header stays fixed at the top -->
+    <div class="flex-shrink-0">
+      <PortfolioHeader client:load currentPath={currentPath} />
+    </div>
+
+    <!-- Scrollable content area -->
+    <main class="flex-1 overflow-y-auto min-h-0 bg-background text-foreground hero-gradient">
+      <div class="page-container">
+        <slot />
+      </div>
+
+      <!-- Compact Footer - Logical requirement for portfolio completeness -->
+      <footer class="border-t border-border/50 py-12 px-6 mt-12 bg-card/30">
+        <div class="page-container flex flex-col md:flex-row justify-between items-center gap-6">
+          <div class="text-caption">
+            &copy; 2026 Developer Portfolio. Built with React & Astro.
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="./home.html" class="text-caption hover:text-primary transition-colors">Home</a>
+            <a href="./project-gallery.html" class="text-caption hover:text-primary transition-colors">Projects</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</BaseLayout>

@@ -1,0 +1,240 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background & Surface */
+    --background: 215 84% 5%;        /* Deep navy — primary background */
+    --foreground: 214 25% 91%;       /* Off-white — primary text */
+    --card: 214 29% 15%;             /* Lifted slate — card surface */
+    --card-foreground: 214 25% 91%;  /* Off-white on cards */
+    --popover: 214 29% 15%;
+    --popover-foreground: 214 25% 91%;
+
+    /* Brand */
+    --primary: 189 100% 50%;         /* Vibrant cyan — CTAs, accents */
+    --primary-foreground: 215 84% 5%; /* Navy text on cyan */
+    --secondary: 214 29% 20%;        /* Subtle lift from card */
+    --secondary-foreground: 214 25% 91%;
+    --accent: 189 100% 50%;          /* Cyan accent */
+    --accent-foreground: 215 84% 5%;
+
+    /* Muted */
+    --muted: 214 20% 25%;            /* Muted surface */
+    --muted-foreground: 214 12% 60%; /* Muted text — metadata, tags */
+
+    /* State & UI */
+    --destructive: 0 84% 60%;        /* Red for deprecated */
+    --destructive-foreground: 214 25% 91%;
+    --border: 214 20% 25%;           /* Subtle borders */
+    --input: 214 29% 20%;            /* Input background */
+    --ring: 189 100% 50%;            /* Cyan focus ring */
+    --radius: 0.5rem;
+
+    /* Hover states */
+    --primary-hover: 189 100% 60%;   /* Brighter cyan on hover */
+    --accent-hover: 189 100% 60%;
+    --muted-hover: 214 20% 30%;      /* Subtle lift */
+
+    /* Custom semantic colors */
+    --success: 174 100% 36%;         /* Teal for live projects */
+    --warning: 38 92% 50%;           /* Amber for in-progress */
+
+    /* Shadows with cyan tint */
+    --shadow-soft: 0 2px 12px rgba(0, 217, 255, 0.08);
+    --shadow-card: 0 4px 24px rgba(0, 217, 255, 0.12);
+    --shadow-glow: 0 0 0 1px rgba(0, 217, 255, 0.2);
+
+    /* Typography */
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --font-mono: "SF Mono", "Menlo", "Consolas", "Monaco", monospace;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  html {
+    overscroll-behavior: none;
+  }
+}
+
+@layer components {
+  /* === REQUIRED === */
+  .text-page-title {
+    @apply text-4xl md:text-5xl font-bold tracking-tight;
+    font-family: var(--font-mono);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .text-body {
+    @apply text-base leading-relaxed text-foreground/90;
+  }
+
+  .page-body {
+    @apply p-8 md:p-12;
+  }
+
+  .card-padding {
+    @apply p-6;
+  }
+
+  .surface-base {
+    @apply bg-card border border-border rounded-[--radius];
+  }
+
+  .surface-raised {
+    @apply bg-card border border-border rounded-[--radius];
+    box-shadow: var(--shadow-card);
+  }
+
+  /* === RECOMMENDED === */
+  .text-section-title {
+    @apply text-2xl md:text-3xl font-semibold tracking-tight;
+    font-family: var(--font-mono);
+    letter-spacing: -0.01em;
+  }
+
+  .text-item-title {
+    @apply text-xl font-semibold;
+    font-family: var(--font-mono);
+  }
+
+  .text-caption {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .text-label {
+    @apply text-xs font-medium uppercase tracking-wide text-muted-foreground;
+    font-family: var(--font-mono);
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .section-spacing {
+    @apply space-y-12;
+  }
+
+  .interactive {
+    @apply transition-all duration-150 cursor-pointer;
+  }
+
+  .page-section-header {
+    @apply flex items-center justify-between mb-6;
+  }
+
+  .filter-bar {
+    @apply flex flex-wrap items-center gap-4 mb-8;
+  }
+
+  .empty-state {
+    @apply flex flex-col items-center justify-center text-center text-muted-foreground py-16;
+  }
+
+  /* === APP-SPECIFIC === */
+
+  /* Hero gradient overlay (home page only) */
+  .hero-gradient {
+    background: radial-gradient(ellipse at top, hsl(189 100% 50% / 0.15), transparent 60%),
+                radial-gradient(ellipse at bottom right, hsl(189 100% 40% / 0.1), transparent 50%);
+  }
+
+  /* Project card hover glow */
+  .project-card-hover {
+    @apply interactive border-border hover:[border-color:hsl(var(--primary)/0.4)];
+    box-shadow: var(--shadow-soft);
+  }
+
+  .project-card-hover:hover {
+    box-shadow: var(--shadow-card), var(--shadow-glow);
+  }
+
+  /* Tech badge pill */
+  .tech-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    font-family: var(--font-mono);
+    background: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+  }
+
+  .tech-badge.highlight {
+    background: hsl(var(--primary) / 0.15);
+    color: hsl(var(--primary));
+    border: 1px solid hsl(var(--primary) / 0.3);
+  }
+
+  /* Status badge color variants */
+  .status-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold;
+  }
+
+  .status-badge.live {
+    background: hsl(var(--success) / 0.15);
+    color: hsl(var(--success));
+    border: 1px solid hsl(var(--success) / 0.3);
+  }
+
+  .status-badge.in-progress {
+    background: hsl(var(--warning) / 0.15);
+    color: hsl(var(--warning));
+    border: 1px solid hsl(var(--warning) / 0.3);
+  }
+
+  .status-badge.archived {
+    background: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Photo placeholder grid pattern */
+  .photo-placeholder {
+    @apply bg-muted rounded-[--radius] overflow-hidden relative;
+    background-image: 
+      linear-gradient(hsl(var(--primary) / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* CTA button with glow */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold interactive;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-soft);
+  }
+
+  .btn-primary:hover {
+    background: hsl(var(--primary-hover));
+    box-shadow: var(--shadow-card), var(--shadow-glow);
+  }
+
+  /* Nav link active state */
+  .nav-link {
+    @apply px-4 py-2 rounded-md transition-colors text-sm font-medium;
+    font-family: var(--font-mono);
+  }
+
+  .nav-link.active {
+    background: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+  }
+
+  .nav-link:not(.active) {
+    color: hsl(var(--muted-foreground));
+  }
+
+  .nav-link:not(.active):hover {
+    background: hsl(var(--muted-hover));
+    color: hsl(var(--foreground));
+  }
+}
+    

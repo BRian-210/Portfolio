@@ -1,0 +1,11 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import Hero from '@/components/home/Hero.tsx'
+---
+
+<BaseLayout title="Home | DevPortfolio" description="Fullstack developer portfolio showcasing modern web projects and technical expertise.">
+  <main class="min-h-screen bg-background text-foreground hero-gradient">
+    <Hero client:load />
+  </main>
+</BaseLayout>

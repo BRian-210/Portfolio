@@ -1,0 +1,11 @@
+
+---
+import StandardLayout from '@/layouts/StandardLayout.astro'
+import ProjectGalleryContent from '@/components/project-gallery/ProjectGalleryContent'
+---
+
+<StandardLayout title="Project Gallery | DevPortfolio" description="Browse my fullstack projects and case studies">
+  <div class="page-body">
+    <ProjectGalleryContent client:load />
+  </div>
+</StandardLayout>
