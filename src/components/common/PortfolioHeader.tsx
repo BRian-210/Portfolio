@@ -1,5 +1,3 @@
-
-import React from 'react';
 import SafeIcon from '@/components/common/SafeIcon';
 import { cn } from '@/lib/utils';
 

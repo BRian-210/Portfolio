@@ -1,27 +1,24 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import AutoImport from 'unplugin-auto-import/vite';
 
-// import { reactNodeTransform, astroSourceIntegration } from './scripts/inject-source-info';   // ← Commented out
-
-// ... (keep your collectRoutes and redirectMissingRoutes functions as they are)
-
 export default defineConfig({
   integrations: [
-    react(),                       // ← Fixed
+    react(),
     tailwind({
       applyBaseStyles: false
-    }),
-    // astroSourceIntegration(),   // ← Remove or comment if it also causes issues
-    redirectMissingRoutes()
+    })
+    // Do NOT put redirectMissingRoutes() here unless it's properly defined as an integration
   ],
+
   output: 'static',
   compressHTML: false,
+
+  // You can add redirects manually here:
+  // redirects: {
+  //   '/old': '/new',
+  // },
 
   vite: {
     base: './',

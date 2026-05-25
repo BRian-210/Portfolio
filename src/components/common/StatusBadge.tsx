@@ -1,5 +1,4 @@
 
-import type { LucideIcon } from 'lucide-react';
 import SafeIcon from '@/components/common/SafeIcon';
 
 export interface StatusBadgeProps {

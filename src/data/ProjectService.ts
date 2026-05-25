@@ -1,26 +1,25 @@
 import type { ProjectData } from './ProjectData'
 
-export const projectDataList: ProjectData[] = [
+const rawProjectDataList: ProjectData[] = [
   {
-    id: 'project-signal-suite',
-    slug: 'signal-suite',
-    title: 'Signal Suite',
+    id: 'project-construction-company',
+    slug: 'construction-company',
+    liveUrl: 'https://malta-zeta.vercel.app/home-page.html',
+    title: 'Construction Company',
     category: 'fullstack',
     status: 'Completed',
     featured: true,
-    shortSummary: 'A client portal for tracking leads, proposals, and internal notes in one workspace.',
+    shortSummary: 'A website for a construction company.',
     longDescription:
-      'Signal Suite combines a fast React interface with a structured API layer to help small teams manage sales operations without spreadsheet chaos. The product emphasizes clarity, responsive workflows, and a dependable data model.',
+      'A website for a construction company.',
     challenge:
-      'The team needed a way to centralize fragmented sales data while keeping the UI simple enough for non-technical users.',
+      'The team needed a website for their construction company.',
     solution:
-      'I designed a modular dashboard, reusable form patterns, and a predictable backend contract that reduced user friction and made future feature expansion easier.',
+      'I designed a website for the construction company.',
     architectureHighlights: [
-      'Role-aware navigation and workspace layout',
-      'Typed form validation with reusable inputs',
-      'API-first data flow with clean separation of concerns',
+      'Website for the construction company.',
     ],
-    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
+    technologies: ['TypeScript,Astro,JavaScript,CSS'],
     thumbnailUrl:
       'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/7220862e-cd3d-41ae-af08-f601881c4a0f.png',
     detailImageUrl:
@@ -28,25 +27,24 @@ export const projectDataList: ProjectData[] = [
     year: '2026',
   },
   {
-    id: 'project-northstar-commerce',
-    slug: 'northstar-commerce',
-    title: 'Northstar Commerce',
+    id: 'project-school-website',
+    slug: 'school-website',
+    liveUrl: 'https://karumande.onrender.com/',
+    title: 'School Website',
     category: 'fullstack',
     status: 'Completed',
     featured: true,
-    shortSummary: 'An ecommerce storefront with product discovery, cart management, and checkout flows.',
+    shortSummary: 'A website for a school.',
     longDescription:
-      'Northstar Commerce focuses on conversion-friendly browsing and a resilient checkout path. The implementation balances visual polish with practical performance and maintainable server logic.',
+      'A website for a school.',
     challenge:
-      'The storefront needed better product discovery and a checkout experience that felt seamless across device sizes.',
+      'The team needed a website for their school.',
     solution:
-      'I created responsive browsing components, a typed cart state flow, and backend services that kept inventory and order state predictable.',
+      'I designed a website for the school.',
     architectureHighlights: [
-      'Composable product listing architecture',
-      'Stateful cart with resilient persistence',
-      'Responsive checkout experience',
+      'Website for the school.',
     ],
-    technologies: ['React', 'Astro', 'Node.js', 'Tailwind CSS'],
+    technologies: ['HTML', 'CSS', 'javascript'],
     thumbnailUrl:
       'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/165c2cf2-a41c-4681-bf81-d0e1fd4e8c13.png',
     detailImageUrl:
@@ -56,6 +54,7 @@ export const projectDataList: ProjectData[] = [
   {
     id: 'project-atelier-ops',
     slug: 'atelier-ops',
+    liveUrl: 'https://atelier-ops-production.up.railway.app',
     title: 'Atelier Ops',
     category: 'backend',
     status: 'Completed',
@@ -82,6 +81,7 @@ export const projectDataList: ProjectData[] = [
   {
     id: 'project-luma-mobile',
     slug: 'luma-mobile',
+    liveUrl: 'https://luma-mobile.vercel.app',
     title: 'Luma Mobile',
     category: 'mobile',
     status: 'In progress',
@@ -108,6 +108,7 @@ export const projectDataList: ProjectData[] = [
   {
     id: 'project-vertex-design-system',
     slug: 'vertex-design-system',
+    liveUrl: 'https://vertex-design-system.vercel.app',
     title: 'Vertex Design System',
     category: 'design-system',
     status: 'Case study',
@@ -134,6 +135,7 @@ export const projectDataList: ProjectData[] = [
   {
     id: 'project-cascade-analytics',
     slug: 'cascade-analytics',
+    liveUrl: 'https://cascade-analytics.onrender.com',
     title: 'Cascade Analytics',
     category: 'fullstack',
     status: 'Completed',
@@ -160,6 +162,7 @@ export const projectDataList: ProjectData[] = [
   {
     id: 'project-harbor-support',
     slug: 'harbor-support',
+    liveUrl: 'https://harbor-support.vercel.app',
     title: 'Harbor Support',
     category: 'frontend',
     status: 'Completed',
@@ -186,6 +189,7 @@ export const projectDataList: ProjectData[] = [
   {
     id: 'project-arc-labs',
     slug: 'arc-labs',
+    liveUrl: 'https://arc-labs-production.up.railway.app',
     title: 'Arc Labs',
     category: 'backend',
     status: 'In progress',
@@ -212,6 +216,7 @@ export const projectDataList: ProjectData[] = [
   {
     id: 'project-nova-launchpad',
     slug: 'nova-launchpad',
+    liveUrl: 'https://nova-launchpad.vercel.app',
     title: 'Nova Launchpad',
     category: 'fullstack',
     status: 'Case study',
@@ -236,6 +241,31 @@ export const projectDataList: ProjectData[] = [
     year: '2025',
   },
 ]
+
+function resolveLocalImagePath(url: string): string {
+  const trimmed = url.trim()
+  const isAbsoluteLocalPath =
+    /^[a-zA-Z]:[\\/]/.test(trimmed) ||
+    trimmed.startsWith('/home/') ||
+    trimmed.startsWith('/Users/') ||
+    trimmed.startsWith('\\\\')
+
+  if (!isAbsoluteLocalPath) return trimmed
+
+  const filename = trimmed.split(/[\\/]/).pop()
+  return filename ? `/uploads/${filename}` : trimmed
+}
+
+function getFrontpageThumbnailUrl(liveUrl: string): string {
+  const normalizedUrl = liveUrl.trim()
+  return `https://image.thum.io/get/width/1200/crop/700/noanimate/${encodeURIComponent(normalizedUrl)}`
+}
+
+export const projectDataList: ProjectData[] = rawProjectDataList.map((project) => ({
+  ...project,
+  thumbnailUrl: getFrontpageThumbnailUrl(project.liveUrl),
+  detailImageUrl: resolveLocalImagePath(project.detailImageUrl),
+}))
 
 export function getAll(): ProjectData[] {
   return projectDataList

@@ -1,0 +1,15 @@
+---
+import StandardLayout from '@/layouts/StandardLayout.astro'
+import ProjectDetailContent from '@/components/project-detail/ProjectDetailContent'
+import * as ProjectService from '@/data/ProjectService'
+
+const projectId = Astro.url.searchParams.get('projectId') ?? undefined
+
+if (!projectId || !ProjectService.getById(projectId)) {
+  return Astro.redirect('/404')
+}
+---
+
+<StandardLayout title="Project Detail | DevPortfolio" description="Detailed project case study and technical breakdown.">
+  <ProjectDetailContent client:load projectId={projectId} />
+</StandardLayout>

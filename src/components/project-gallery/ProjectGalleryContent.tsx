@@ -3,7 +3,6 @@ import { useMemo } from 'react'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import ProjectCard from '@/components/common/ProjectCard'
 import * as ProjectService from '@/data/ProjectService'
-import type { ProjectData } from '@/data/ProjectData'
 
 const CATEGORY_OPTIONS = [
   { value: 'all', label: 'All Projects' },
@@ -95,6 +94,7 @@ export default function ProjectGalleryContent() {
               key={project.id}
               project={{
                 id: project.id,
+                liveUrl: project.liveUrl,
                 title: project.title,
                 description: project.shortSummary,
                 tags: project.technologies.slice(0, 3),
