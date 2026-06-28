@@ -9,19 +9,27 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false
     })
-    // Do NOT put redirectMissingRoutes() here unless it's properly defined as an integration
   ],
 
   output: 'static',
   compressHTML: false,
 
-  // You can add redirects manually here:
-  // redirects: {
-  //   '/old': '/new',
-  // },
-
   vite: {
     base: './',
+
+    // Add this
+    server: {
+      host: true,
+    },
+
+    // Add this
+    preview: {
+      host: true,
+      allowedHosts: [
+        "portfolio-11sa.onrender.com"
+      ],
+    },
+
     plugins: [
       AutoImport({
         imports: [
@@ -31,19 +39,23 @@ export default defineConfig({
         dts: 'src/auto-imports.d.ts',
       })
     ],
+
     resolve: {
       alias: {
         '@': '/src'
       }
     },
+
     build: {
       target: 'es2022',
       minify: 'esbuild',
       chunkSizeWarningLimit: 10000,
     },
+
     esbuild: {
       target: 'esnext',
     },
+
     optimizeDeps: {
       force: false
     },
