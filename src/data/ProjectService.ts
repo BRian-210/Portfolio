@@ -21,9 +21,9 @@ const rawProjectDataList: ProjectData[] = [
     ],
     technologies: ['TypeScript,Astro,JavaScript,CSS'],
     thumbnailUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/7220862e-cd3d-41ae-af08-f601881c4a0f.png',
+      'public/uploads/Malta.png',
     detailImageUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/a7f4584c-63d2-405b-aec9-1ebaa1ebfb23.png',
+      'public/uploads/Malta.png',
     year: '2026',
   },
   {
@@ -46,22 +46,22 @@ const rawProjectDataList: ProjectData[] = [
     ],
     technologies: ['HTML', 'CSS', 'javascript'],
     thumbnailUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/165c2cf2-a41c-4681-bf81-d0e1fd4e8c13.png',
+      'public/uploads/School.png',
     detailImageUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/f5bb3d58-ee56-4dc0-a3a3-2e4b2818d312.png',
+      'public/uploads/School.png',
     year: '2025',
   },
   {
-    id: 'project-atelier-ops',
-    slug: 'atelier-ops',
+    id: 'project-uber-app',
+    slug: 'Bossie Ride',
     liveUrl: 'https://atelier-ops-production.up.railway.app',
-    title: 'Atelier Ops',
-    category: 'backend',
-    status: 'Completed',
-    featured: false,
-    shortSummary: 'An internal operations dashboard for scheduling, task routing, and audit logs.',
+    title: 'Bossie Ride',
+    category: 'fullstack',
+    status: 'In progress',
+    featured: true,
+    shortSummary: 'Uber App.',
     longDescription:
-      'Atelier Ops supports service teams that need reliability more than flash. The system organizes day-to-day scheduling, issue assignment, and operational visibility.',
+      'A fullstack uber app that lets client choose their best ride on a budget.',
     challenge:
       'Operational teams were losing time to scattered communication and manual scheduling tasks.',
     solution:
@@ -73,171 +73,9 @@ const rawProjectDataList: ProjectData[] = [
     ],
     technologies: ['Node.js', 'Express', 'PostgreSQL'],
     thumbnailUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/532e7aff-2583-41bb-9a5a-77e43d2a197d.png',
+      'public/uploads/Bossie.png',
     detailImageUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/7f75fb96-f459-478c-99d4-aabb2b896d23.png',
-    year: '2025',
-  },
-  {
-    id: 'project-luma-mobile',
-    slug: 'luma-mobile',
-    liveUrl: 'https://luma-mobile.vercel.app',
-    title: 'Luma Mobile',
-    category: 'mobile',
-    status: 'In progress',
-    featured: false,
-    shortSummary: 'A mobile companion app for daily habits, reminders, and lightweight progress tracking.',
-    longDescription:
-      'Luma Mobile brings habit tracking and reminders into a focused mobile-first flow. It prioritizes quick interactions, readable layouts, and gentle nudges that encourage consistency.',
-    challenge:
-      'The interface had to work well on small screens while staying pleasant for repeated daily use.',
-    solution:
-      'I designed concise screens, thumb-friendly interactions, and a data model that keeps the app snappy and easy to extend.',
-    architectureHighlights: [
-      'Mobile-first navigation patterns',
-      'Lightweight daily activity views',
-      'Clear progression and reminder states',
-    ],
-    technologies: ['React', 'TypeScript', 'Design Systems'],
-    thumbnailUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/ff1e5773-b0df-4305-a2a2-3852db56bd78.png',
-    detailImageUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/49ea99f6-5db5-4065-84cf-f7d697429750.png',
-    year: '2026',
-  },
-  {
-    id: 'project-vertex-design-system',
-    slug: 'vertex-design-system',
-    liveUrl: 'https://vertex-design-system.vercel.app',
-    title: 'Vertex Design System',
-    category: 'design-system',
-    status: 'Case study',
-    featured: true,
-    shortSummary: 'A reusable component and token system for consistent product interfaces.',
-    longDescription:
-      'Vertex provides the building blocks for multiple product surfaces, including buttons, forms, navigation patterns, and color tokens. The system reduces design drift and speeds up delivery.',
-    challenge:
-      'Multiple products were diverging visually and creating inconsistent user experiences.',
-    solution:
-      'I defined shared tokens, component variants, and documentation patterns that made adoption easy across teams.',
-    architectureHighlights: [
-      'Token-driven UI foundations',
-      'Documented component variants',
-      'Scalable adoption across products',
-    ],
-    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-    thumbnailUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/857db564-f158-45c9-a129-353e9188c2f4.png',
-    detailImageUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/89030f88-93da-43b7-8731-c28294b5ed66.png',
-    year: '2024',
-  },
-  {
-    id: 'project-cascade-analytics',
-    slug: 'cascade-analytics',
-    liveUrl: 'https://cascade-analytics.onrender.com',
-    title: 'Cascade Analytics',
-    category: 'fullstack',
-    status: 'Completed',
-    featured: false,
-    shortSummary: 'A reporting platform for viewing business metrics, trends, and exportable summaries.',
-    longDescription:
-      'Cascade Analytics gives stakeholders a clear place to inspect KPIs, compare time ranges, and export useful reports. It is built to stay responsive while handling dense information.',
-    challenge:
-      'Users needed a dashboard that could present a lot of data without becoming visually overwhelming.',
-    solution:
-      'I introduced summary cards, chart groupings, and predictable data queries that keep interactions fluid.',
-    architectureHighlights: [
-      'Dashboard with multiple reporting modes',
-      'Query-friendly metric structures',
-      'Export and summary workflows',
-    ],
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
-    thumbnailUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/ab7846a0-3176-4264-ace1-39d6f32ffeff.png',
-    detailImageUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/70099184-7d2d-431f-a41d-ef6047042972.png',
-    year: '2025',
-  },
-  {
-    id: 'project-harbor-support',
-    slug: 'harbor-support',
-    liveUrl: 'https://harbor-support.vercel.app',
-    title: 'Harbor Support',
-    category: 'frontend',
-    status: 'Completed',
-    featured: false,
-    shortSummary: 'A customer support portal with ticket browsing, assignment, and conversation history.',
-    longDescription:
-      'Harbor Support streamlines customer issue handling through a friendly interface for support agents and managers. The project emphasizes readability, quick filtering, and ticket context.',
-    challenge:
-      'Support staff needed faster access to open tickets and previous conversation details.',
-    solution:
-      'I built streamlined list filters, detail panes, and concise interaction patterns that reduce cognitive load.',
-    architectureHighlights: [
-      'Fast ticket browsing and filtering',
-      'Detail-first customer context',
-      'Compact support workflow layout',
-    ],
-    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-    thumbnailUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/5aaa8977-4e22-4703-abaa-4d3ff34c4a92.png',
-    detailImageUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/df58065b-5c2e-41ba-b62c-dc35b38bdb52.png',
-    year: '2024',
-  },
-  {
-    id: 'project-arc-labs',
-    slug: 'arc-labs',
-    liveUrl: 'https://arc-labs-production.up.railway.app',
-    title: 'Arc Labs',
-    category: 'backend',
-    status: 'In progress',
-    featured: false,
-    shortSummary: 'An experimental API platform for validating product ideas and data contracts.',
-    longDescription:
-      'Arc Labs is a sandbox for prototyping APIs, testing schema changes, and comparing implementation approaches. It helps teams move quickly while keeping contracts explicit.',
-    challenge:
-      'Fast experimentation often leads to unstable interfaces and unclear service boundaries.',
-    solution:
-      'I built a structured prototype environment with versioned endpoints and reusable test data patterns.',
-    architectureHighlights: [
-      'Versioned API experimentation',
-      'Schema-first approach',
-      'Reusable test fixtures',
-    ],
-    technologies: ['Node.js', 'Express', 'TypeScript'],
-    thumbnailUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/66c1a15c-c977-428a-a757-ecbdabd34fe7.png',
-    detailImageUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/42818c79-1249-4012-8320-6b6945399812.png',
-    year: '2026',
-  },
-  {
-    id: 'project-nova-launchpad',
-    slug: 'nova-launchpad',
-    liveUrl: 'https://nova-launchpad.vercel.app',
-    title: 'Nova Launchpad',
-    category: 'fullstack',
-    status: 'Case study',
-    featured: true,
-    shortSummary: 'A marketing and onboarding website for launching a new SaaS product.',
-    longDescription:
-      'Nova Launchpad blends editorial storytelling with interactive onboarding steps to guide new users from interest to activation. It showcases design craft while supporting measurable conversion goals.',
-    challenge:
-      'The product team needed a launch experience that could explain value quickly and convert visitors into signups.',
-    solution:
-      'I created a content-led structure, responsive landing sections, and data-backed calls to action that support both storytelling and conversion.',
-    architectureHighlights: [
-      'Conversion-focused landing sections',
-      'Onboarding-friendly step flow',
-      'Marketing content and product messaging alignment',
-    ],
-    technologies: ['React', 'Astro', 'Tailwind CSS', 'Node.js'],
-    thumbnailUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/11c84b30-4c96-4757-b568-0bd3b4d92f61.png',
-    detailImageUrl:
-      'https://spark-builder.s3.us-east-1.amazonaws.com/image/2026/4/28/3ed1a67b-fa54-4f8d-a32c-75b7631695df.png',
+      'public/uploads/Bossie.png',
     year: '2025',
   },
 ]
@@ -263,7 +101,7 @@ function getFrontpageThumbnailUrl(liveUrl: string): string {
 
 export const projectDataList: ProjectData[] = rawProjectDataList.map((project) => ({
   ...project,
-  thumbnailUrl: getFrontpageThumbnailUrl(project.liveUrl),
+  thumbnailUrl: resolveLocalImagePath(project.thumbnailUrl || getFrontpageThumbnailUrl(project.liveUrl)),
   detailImageUrl: resolveLocalImagePath(project.detailImageUrl),
 }))
 
