@@ -22,7 +22,7 @@ export default function Hero() {
   )
 
   const handleViewWork = () => {
-    window.location.href = profile.primaryCtaUrl || './project-gallery.html'
+    window.location.href = profile.primaryCtaUrl || './project-gallery/'
   }
 
   const categoryLabels: Record<string, string> = {

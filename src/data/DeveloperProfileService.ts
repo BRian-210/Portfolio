@@ -13,7 +13,7 @@ export const developerProfileDataList: DeveloperProfileData[] = [
     primaryCtaLabel: 'View My Work',
     primaryCtaUrl: './project-gallery.html',
     portraitUrl:
-      'public/uploads/Image May 19, 2026, 05_12_30 AM.png',
+      '/uploads/Image May 19, 2026, 05_12_30 AM.png',
   },
 ]
 

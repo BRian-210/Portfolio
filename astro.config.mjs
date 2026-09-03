@@ -21,7 +21,7 @@ export default defineConfig({
   // },
 
   vite: {
-    base: './',
+    base: '/',
     plugins: [
       AutoImport({
         imports: [

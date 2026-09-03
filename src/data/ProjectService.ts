@@ -21,15 +21,15 @@ const rawProjectDataList: ProjectData[] = [
     ],
     technologies: ['TypeScript,Astro,JavaScript,CSS'],
     thumbnailUrl:
-      'public/uploads/Malta.png',
+      '/uploads/Malta.png',
     detailImageUrl:
-      'public/uploads/Malta.png',
+      '/uploads/Malta.png',
     year: '2026',
   },
   {
     id: 'project-school-website',
     slug: 'school-website',
-    liveUrl: 'https://karumande.onrender.com/',
+    liveUrl: 'https://karumandelink.netlify.app/',
     title: 'School Website',
     category: 'fullstack',
     status: 'Completed',
@@ -46,9 +46,9 @@ const rawProjectDataList: ProjectData[] = [
     ],
     technologies: ['HTML', 'CSS', 'javascript'],
     thumbnailUrl:
-      'public/uploads/School.png',
+      '/uploads/School.png',
     detailImageUrl:
-      'public/uploads/School.png',
+      '/uploads/School.png',
     year: '2025',
   },
   {
@@ -73,9 +73,9 @@ const rawProjectDataList: ProjectData[] = [
     ],
     technologies: ['Node.js', 'Express', 'PostgreSQL'],
     thumbnailUrl:
-      'public/uploads/Bossie.png',
+      '/uploads/Bossie.png',
     detailImageUrl:
-      'public/uploads/Bossie.png',
+      '/uploads/Bossie.png',
     year: '2025',
   },
 ]
