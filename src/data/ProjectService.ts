@@ -54,7 +54,7 @@ const rawProjectDataList: ProjectData[] = [
   {
     id: 'project-uber-app',
     slug: 'Bossie Ride',
-    liveUrl: 'https://atelier-ops-production.up.railway.app',
+    liveUrl: 'https://bossie-ride.vercel.app/',
     title: 'Bossie Ride',
     category: 'fullstack',
     status: 'In progress',
