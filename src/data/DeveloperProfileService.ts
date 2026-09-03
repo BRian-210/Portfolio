@@ -11,7 +11,7 @@ export const developerProfileDataList: DeveloperProfileData[] = [
     location: 'Remote • Nairobi, Kenya',
     availability: 'Open to freelance and full-time roles',
     primaryCtaLabel: 'View My Work',
-    primaryCtaUrl: './project-gallery.html',
+    primaryCtaUrl: '/project-gallery/',
     portraitUrl:
       '/uploads/Image May 19, 2026, 05_12_30 AM.png',
   },

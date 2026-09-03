@@ -13,7 +13,7 @@ interface PortfolioHeaderProps {
 
 const NAV_ITEMS: NavItem[] = [
   { name: 'Home', url: './home.html', icon: 'Home' },
-  { name: 'Projects', url: './project-gallery.html', icon: 'LayoutGrid' },
+  { name: 'Projects', url: '/project-gallery/', icon: 'LayoutGrid' },
 ];
 
 export default function PortfolioHeader({ currentPath = '' }: PortfolioHeaderProps) {

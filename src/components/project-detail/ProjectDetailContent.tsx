@@ -23,7 +23,7 @@ export default function ProjectDetailContent({ projectId }: ProjectDetailContent
           <p className="text-body text-muted-foreground">
             The project you are looking for does not exist or the link is invalid.
           </p>
-          <a href="./project-gallery.html" className="btn-primary inline-flex">
+          <a href="/project-gallery/" className="btn-primary inline-flex">
             <SafeIcon name="ArrowLeft" size={16} className="mr-2" />
             Back to Project Gallery
           </a>
@@ -35,7 +35,7 @@ export default function ProjectDetailContent({ projectId }: ProjectDetailContent
   return (
     <div className="page-body py-8 md:py-12">
       <div className="max-w-4xl mx-auto space-y-8">
-        <a href="./project-gallery.html" className="inline-flex items-center text-caption hover:text-primary transition-colors">
+        <a href="/project-gallery/" className="inline-flex items-center text-caption hover:text-primary transition-colors">
           <SafeIcon name="ArrowLeft" size={16} className="mr-2" />
           Back to Project Gallery
         </a>
