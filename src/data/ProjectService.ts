@@ -29,7 +29,7 @@ const rawProjectDataList: ProjectData[] = [
   {
     id: 'project-school-website',
     slug: 'school-website',
-    liveUrl: 'https://karumandelink.netlify.app/',
+    liveUrl: 'https://karumandelinkschool.netlify.app/',
     title: 'School Website',
     category: 'fullstack',
     status: 'Completed',
