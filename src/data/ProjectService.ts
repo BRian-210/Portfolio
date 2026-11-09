@@ -32,7 +32,7 @@ const rawProjectDataList: ProjectData[] = [
     liveUrl: 'https://karumandelinkschool.netlify.app/',
     title: 'School Website',
     category: 'fullstack',
-    status: 'Completed',
+    status: 'In progress',
     featured: true,
     shortSummary: 'A website for a school.',
     longDescription:
